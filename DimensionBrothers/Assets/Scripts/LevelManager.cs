@@ -1,3 +1,4 @@
+using DimensionBrothers.Player;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -40,7 +41,6 @@ public class LevelManager : MonoBehaviour
 
     public void ReloadLevel()
     {
-        player.isActive = false;
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 }
