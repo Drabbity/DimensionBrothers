@@ -44,6 +44,11 @@ namespace DimensionBrothers.Player
             _playerInput = new PlayerInputActions();
         }
 
+        private void Start()
+        {
+            Physics2D.queriesHitTriggers = false;
+        }
+
         private void OnEnable()
         {
             _move = _playerInput.Player.Move;

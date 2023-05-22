@@ -199,6 +199,22 @@ PrefabInstance:
       propertyPath: _playerTag
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 4968493359507808975, guid: dbda7366cb26782499a6b5f237b36477, type: 3}
+      propertyPath: m_Size.x
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4968493359507808975, guid: dbda7366cb26782499a6b5f237b36477, type: 3}
+      propertyPath: m_Size.y
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4968493359507808975, guid: dbda7366cb26782499a6b5f237b36477, type: 3}
+      propertyPath: m_Offset.x
+      value: -0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4968493359507808975, guid: dbda7366cb26782499a6b5f237b36477, type: 3}
+      propertyPath: m_Offset.y
+      value: 0.8
+      objectReference: {fileID: 0}
     - target: {fileID: 4968493359507808977, guid: dbda7366cb26782499a6b5f237b36477, type: 3}
       propertyPath: m_RootOrder
       value: 1

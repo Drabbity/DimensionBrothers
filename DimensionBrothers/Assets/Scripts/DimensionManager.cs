@@ -45,10 +45,15 @@ namespace DimensionBrothers.Dimension
 
         }
 
-        private void ActivateDimension(int index, bool active)
+        private void ActivateDimension(int index, bool isActive)
         {
-            _dimensions[index].PlayerController.IsActive = active;
-            _dimensions[index].TilemapRenderer.enabled = active;
+            _dimensions[index].PlayerController.IsActive = isActive;
+            _dimensions[index].TilemapRenderer.enabled = isActive;
+
+            foreach(var dimensionObject in _dimensions[index].Objects)
+            {
+                dimensionObject.enabled = isActive;
+            }
         }
 
         [Serializable]
@@ -56,6 +61,7 @@ namespace DimensionBrothers.Dimension
         {
             public PlayerController PlayerController;
             public TilemapRenderer TilemapRenderer;
+            public SpriteRenderer[] Objects;
         }
     }
 }
