@@ -16,6 +16,7 @@ namespace DimensionBrothers.Player
         [SerializeField] private float _maxGravityFallSpeed;
         [SerializeField] private float _coyoteJumpTimeGap;
 
+        [SerializeField] private SpriteRenderer _renderer;
         [field: SerializeField] public bool IsActive { get; set; }
 
         private Rigidbody2D _rigidBody;
@@ -65,6 +66,10 @@ namespace DimensionBrothers.Player
         private void FixedUpdate()
         {
             ReadInfo();
+            if (IsGrounded())
+                _renderer.color = Color.blue;
+            else
+                _renderer.color = Color.red;
 
             CalculateMove();
             CalculateGravity();
@@ -160,7 +165,7 @@ namespace DimensionBrothers.Player
 
         private RaycastHit2D GetGround(float distance)
         {
-            return Physics2D.BoxCast(_collider.bounds.center, _collider.bounds.size, 0, Vector2.down, distance, _jumpLayerMask);
+            return Physics2D.BoxCast(_collider.bounds.center, new Vector2(_collider.bounds.size.x / 1.2f, _collider.bounds.size.y), 0, Vector2.down, distance, _jumpLayerMask);
         }
     }
 }

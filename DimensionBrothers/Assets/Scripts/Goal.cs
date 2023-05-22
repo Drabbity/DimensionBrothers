@@ -1,42 +1,33 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
-public class Goal : MonoBehaviour
+namespace DimensionBrothers.Dimension
 {
-    [SerializeField] int target;
-    [SerializeField] Color defaultColor = Color.red;
-    [SerializeField] Color unlockColor = Color.blue;
-    
-    SpriteRenderer spriteRenderer;
-    Wallet playerWallet;
-
-    bool isUnlocked;
-
-    void Awake() 
+    public class Goal : MonoBehaviour
     {
-        spriteRenderer = GetComponent<SpriteRenderer>();
-        spriteRenderer.color = defaultColor;
-        playerWallet = FindObjectOfType<Wallet>();
-    }
+        [SerializeField] private string _playerTag;
+        [SerializeField] private int _playerCount = 2;
 
-    void Update()
-    {
-        //Check if player has enough coins to unlock the goal
-        if(playerWallet.GetCoins() >= target)
+        private int _playersAtGoal = 0;
+
+        private void OnTriggerEnter2D(Collider2D collision)
         {
-            isUnlocked = true;
-            spriteRenderer.color = unlockColor;
+            if (collision.CompareTag(_playerTag))
+            {
+                _playersAtGoal++;
+
+                if (_playersAtGoal >= _playerCount)
+                {
+                    print("You won");
+                    //Player won
+                }
+            }
         }
-    }
 
-    void OnTriggerEnter2D(Collider2D other)
-    {
-        //Complete the level if the player has enough coins
-        if (other.GetComponent<Wallet>() == playerWallet)
+        private void OnTriggerExit2D(Collider2D collision)
         {
-            if(isUnlocked) {
-                LevelManager.Instance.ReloadLevel();
+            if (collision.CompareTag(_playerTag))
+            {
+                _playersAtGoal--;
             }
         }
     }

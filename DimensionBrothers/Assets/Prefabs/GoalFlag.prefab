@@ -124,6 +124,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ea5fde2cd2e581f4582115a0c4112706, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  target: 10
-  defaultColor: {r: 1, g: 0.6666667, b: 0.10980392, a: 1}
-  unlockColor: {r: 0.105882354, g: 0.74509805, b: 1, a: 1}
+  _playerTag: Player
+  _playerCount: 2

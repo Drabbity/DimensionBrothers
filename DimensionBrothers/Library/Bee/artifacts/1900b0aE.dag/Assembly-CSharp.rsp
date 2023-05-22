@@ -375,11 +375,7 @@
 "Assets/Scripts/DimensionManager.cs"
 "Assets/Scripts/Goal.cs"
 "Assets/Scripts/LevelManager.cs"
-"Assets/Scripts/Pickup.cs"
 "Assets/Scripts/PlayerController.cs"
-"Assets/Scripts/Spike.cs"
-"Assets/Scripts/Timer.cs"
-"Assets/Scripts/Wallet.cs"
 -langversion:9.0
 
 /deterministic
