@@ -71,10 +71,6 @@ namespace DimensionBrothers.Player
         private void FixedUpdate()
         {
             ReadInfo();
-            if (IsGrounded())
-                _renderer.color = Color.blue;
-            else
-                _renderer.color = Color.red;
 
             CalculateMove();
             CalculateGravity();
@@ -170,7 +166,7 @@ namespace DimensionBrothers.Player
 
         private RaycastHit2D GetGround(float distance)
         {
-            return Physics2D.BoxCast(_collider.bounds.center, new Vector2(_collider.bounds.size.x / 1.2f, _collider.bounds.size.y), 0, Vector2.down, distance, _jumpLayerMask);
+            return Physics2D.BoxCast(_collider.bounds.center, new Vector2(_collider.bounds.size.x / 1.1f, _collider.bounds.size.y), 0, Vector2.down, distance, _jumpLayerMask);
         }
     }
 }
