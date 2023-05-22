@@ -372,6 +372,7 @@
 -r:"Library/Bee/artifacts/1900b0aE.dag/UnityEditor.UI.ref.dll"
 -r:"Library/Bee/artifacts/1900b0aE.dag/UnityEngine.UI.ref.dll"
 "Assets/Input/PlayerInputActions.cs"
+"Assets/Scripts/CameraFloat.cs"
 "Assets/Scripts/DimensionManager.cs"
 "Assets/Scripts/Goal.cs"
 "Assets/Scripts/LevelManager.cs"
