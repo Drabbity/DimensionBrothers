@@ -1,16 +1,17 @@
 using UnityEngine;
-using UnityEngine.SceneManagement;
 
 namespace DimensionBrothers.Menu
 {
     public class LevelSelection : MonoBehaviour
     {
-        [SerializeField] private string _levelSceneNamePrefix;
         [SerializeField] private LevelSelector _levelSelectorPrefab;
         [SerializeField] private Transform _content;
 
+        private string _levelSceneNamePrefix;
+
         private void Start()
         {
+            _levelSceneNamePrefix = GameManager.Instance.LevelSceneNamePrefix;
             LoadLevelSelectors();
         }
 

@@ -15,9 +15,26 @@ namespace DimensionBrothers.Player
         [SerializeField] private float _gravity;
         [SerializeField] private float _maxGravityFallSpeed;
         [SerializeField] private float _coyoteJumpTimeGap;
-
         [SerializeField] private SpriteRenderer _renderer;
-        [field: SerializeField] public bool IsActive { get; set; }
+        [SerializeField] private SpriteRenderer _marker;
+        
+        [SerializeField] private bool _isActive;
+        public bool IsActive 
+        { 
+            get
+            {
+                return _isActive;
+            }
+            set
+            {
+                if(value)
+                    _marker.enabled = true;
+                else
+                    _marker.enabled = false;
+
+                _isActive = value;
+            } 
+        }
 
         private Rigidbody2D _rigidBody;
         private BoxCollider2D _collider;
@@ -84,7 +101,7 @@ namespace DimensionBrothers.Player
 
         private void ReadInput()
         {
-            if (IsActive)
+            if (_isActive)
             {
                 _moveInput = _move.ReadValue<Vector2>().x;
                 _hasJumpInput = _jump.IsPressed();

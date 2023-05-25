@@ -1,46 +1,36 @@
-using DimensionBrothers.Player;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 
-public class LevelManager : MonoBehaviour
+namespace DimensionBrothers
 {
-    #region Singleton Stuff
-    static LevelManager instance;
-    public static LevelManager Instance { get { return instance; } }
-
-    protected virtual void Awake()
+    public class LevelManager : MonoBehaviour
     {
-        if (instance != null)
+        [SerializeField] private GameObject _victoryScreen;
+        [SerializeField] private GameObject _nextLevelButton;
+
+        private void Start()
         {
-            Debug.LogErrorFormat("[Singleton] Trying to instantiate a second instance of singleton class {0} from {1}", GetType().Name, this.gameObject.name);
-            Destroy(this.gameObject);
+            ValidateNextLevelButton();
+            _victoryScreen.SetActive(false);
         }
-        else
+
+        private void ValidateNextLevelButton()
         {
-            instance = this;
+            if (!GameManager.Instance.DoesNextLevelExist())
+                _nextLevelButton.SetActive(false);
         }
-    }
 
-    protected virtual void OnDestroy()
-    {
-        if (instance == this)
+        public void OpenVictoryScreen()
         {
-            instance = null;
+            _victoryScreen.SetActive(true);
         }
-    }
-    #endregion
+        public void LoadNextLevel()
+        {
+            GameManager.Instance.LoadNextLevel();
+        }
 
-    PlayerController player;
-
-    void Start()
-    {
-        player = FindObjectOfType<PlayerController>();
-    }
-
-    public void ReloadLevel()
-    {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        public void LoadMenu()
+        {
+            GameManager.Instance.LoadMenu();
+        }
     }
 }

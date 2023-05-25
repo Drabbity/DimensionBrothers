@@ -1,6 +1,5 @@
 ﻿using TMPro;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 namespace DimensionBrothers.Menu
@@ -12,7 +11,7 @@ namespace DimensionBrothers.Menu
 
         public void Initialize(string sceneName, int levelNumber)
         {
-            _button.onClick.AddListener(() => { SceneManager.LoadScene(sceneName); });
+            _button.onClick.AddListener(() => { GameManager.Instance.LoadScene(sceneName); });
             _text.text = levelNumber.ToString();
         }
     }

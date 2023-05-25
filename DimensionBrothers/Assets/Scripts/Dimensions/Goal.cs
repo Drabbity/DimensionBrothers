@@ -7,7 +7,14 @@ namespace DimensionBrothers.Dimension
         [SerializeField] private string _playerTag;
         [SerializeField] private int _playerCount = 2;
 
+        private LevelManager _levelManager;
+
         private int _playersAtGoal = 0;
+
+        private void Start()
+        {
+            _levelManager = FindObjectOfType<LevelManager>();
+        }
 
         private void OnTriggerEnter2D(Collider2D collision)
         {
@@ -17,8 +24,7 @@ namespace DimensionBrothers.Dimension
 
                 if (_playersAtGoal >= _playerCount)
                 {
-                    print("You won");
-                    //Player won
+                    _levelManager.OpenVictoryScreen();
                 }
             }
         }
