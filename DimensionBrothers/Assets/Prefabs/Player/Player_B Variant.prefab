@@ -57,7 +57,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4253297328530706518, guid: 386af45775f34f94ea083fad2d0054a6, type: 3}
       propertyPath: m_Name
-      value: Player_B
+      value: Player_B Variant
       objectReference: {fileID: 0}
     - target: {fileID: 4253297328530706518, guid: 386af45775f34f94ea083fad2d0054a6, type: 3}
       propertyPath: m_Layer
@@ -75,6 +75,10 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 8
       objectReference: {fileID: 0}
+    - target: {fileID: 4253297329431871019, guid: 386af45775f34f94ea083fad2d0054a6, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 419e1edf0de664f46bf89d1a7e8618de, type: 3}
     - target: {fileID: 4253297329431871022, guid: 386af45775f34f94ea083fad2d0054a6, type: 3}
       propertyPath: m_Layer
       value: 8

@@ -115,6 +115,7 @@
 -define:ENABLE_INPUT_SYSTEM
 -define:CSHARP_7_OR_LATER
 -define:CSHARP_7_3_OR_NEWER
+-r:"Assets/Plugins/Demigiant/DOTween/DOTween.dll"
 -r:"C:/Program Files/Unity/Hub/Editor/2021.2.7f1/Editor/Data/Managed/UnityEngine/UnityEditor.CoreModule.dll"
 -r:"C:/Program Files/Unity/Hub/Editor/2021.2.7f1/Editor/Data/Managed/UnityEngine/UnityEditor.DeviceSimulatorModule.dll"
 -r:"C:/Program Files/Unity/Hub/Editor/2021.2.7f1/Editor/Data/Managed/UnityEngine/UnityEditor.DiagnosticsModule.dll"
@@ -327,6 +328,7 @@
 -r:"C:/Users/alexa/Documents/dimension-brothers/DimensionBrothers/Library/PackageCache/com.unity.burst@1.6.0/Unity.Burst.Unsafe.dll"
 -r:"C:/Users/alexa/Documents/dimension-brothers/DimensionBrothers/Library/PackageCache/com.unity.nuget.newtonsoft-json@2.0.0/Runtime/Newtonsoft.Json.dll"
 -r:"C:/Users/alexa/Documents/dimension-brothers/DimensionBrothers/Library/PackageCache/com.unity.visualscripting@1.7.6/Runtime/VisualScripting.Flow/Dependencies/NCalc/Unity.VisualScripting.Antlr3.Runtime.dll"
+-r:"Library/Bee/artifacts/1900b0aE.dag/Assembly-CSharp-firstpass.ref.dll"
 -r:"Library/Bee/artifacts/1900b0aE.dag/Hierarchy2.Editor.ref.dll"
 -r:"Library/Bee/artifacts/1900b0aE.dag/Hierarchy2.Runtime.ref.dll"
 -r:"Library/Bee/artifacts/1900b0aE.dag/PsdPlugin.ref.dll"
@@ -372,12 +374,15 @@
 -r:"Library/Bee/artifacts/1900b0aE.dag/UnityEditor.UI.ref.dll"
 -r:"Library/Bee/artifacts/1900b0aE.dag/UnityEngine.UI.ref.dll"
 "Assets/Input/PlayerInputActions.cs"
-"Assets/Scripts/CameraFloat.cs"
-"Assets/Scripts/DimensionManager.cs"
-"Assets/Scripts/Goal.cs"
+"Assets/Scripts/Dimensions/DimensionManager.cs"
+"Assets/Scripts/Dimensions/Goal.cs"
+"Assets/Scripts/Dimensions/Lever.cs"
 "Assets/Scripts/LevelManager.cs"
-"Assets/Scripts/Lever.cs"
-"Assets/Scripts/PlayerController.cs"
+"Assets/Scripts/Menu/CameraFloat.cs"
+"Assets/Scripts/Menu/LevelSelection.cs"
+"Assets/Scripts/Menu/LevelSelector.cs"
+"Assets/Scripts/Menu/MenuManager.cs"
+"Assets/Scripts/Player/PlayerController.cs"
 -langversion:9.0
 
 /deterministic
