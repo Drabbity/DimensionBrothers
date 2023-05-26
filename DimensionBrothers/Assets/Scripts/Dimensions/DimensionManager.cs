@@ -15,6 +15,7 @@ namespace DimensionBrothers.Dimension
 
         private void Start()
         {
+            PopulateObjectArray();
             ChangeDimension(_startingDimensionIndex);
         }
 
@@ -42,7 +43,6 @@ namespace DimensionBrothers.Dimension
                 ActivateDimension(index, true);
                 _activeDimensionIndex = index;
             }
-
         }
 
         private void ActivateDimension(int index, bool isActive)
@@ -56,12 +56,20 @@ namespace DimensionBrothers.Dimension
             }
         }
 
+        private void PopulateObjectArray()
+        {
+            for(int i = 0; i < _dimensions.Length; i++)
+            {
+                _dimensions[i].Objects = _dimensions[i].TilemapRenderer.transform.GetComponentsInChildren<SpriteRenderer>(true);
+            }
+        }
+
         [Serializable]
         struct Dimension
         {
             public PlayerController PlayerController;
             public TilemapRenderer TilemapRenderer;
-            public SpriteRenderer[] Objects;
+            [HideInInspector] public SpriteRenderer[] Objects;
         }
     }
 }

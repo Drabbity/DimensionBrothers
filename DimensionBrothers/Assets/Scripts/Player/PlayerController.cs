@@ -17,6 +17,8 @@ namespace DimensionBrothers.Player
         [SerializeField] private float _coyoteJumpTimeGap;
         [SerializeField] private SpriteRenderer _renderer;
         [SerializeField] private SpriteRenderer _marker;
+        [SerializeField] private int _activeSpriteOrder = 5;
+        [SerializeField] private int _inactiveSpriteOrder = 15;
         
         [SerializeField] private bool _isActive;
         public bool IsActive 
@@ -28,13 +30,21 @@ namespace DimensionBrothers.Player
             set
             {
                 if(value)
+                {
                     _marker.enabled = true;
+                    _renderer.sortingOrder = _activeSpriteOrder;
+                }
                 else
+                {
                     _marker.enabled = false;
+                    _renderer.sortingOrder = _inactiveSpriteOrder;
+                }
 
                 _isActive = value;
             } 
         }
+
+        private LevelManager _levelManager;
 
         private Rigidbody2D _rigidBody;
         private BoxCollider2D _collider;
@@ -63,6 +73,7 @@ namespace DimensionBrothers.Player
 
         private void Start()
         {
+            _levelManager = LevelManager.Instance;
             Physics2D.queriesHitTriggers = false;
         }
 
@@ -101,7 +112,7 @@ namespace DimensionBrothers.Player
 
         private void ReadInput()
         {
-            if (_isActive)
+            if (_isActive && !_levelManager.IsGamePaused)
             {
                 _moveInput = _move.ReadValue<Vector2>().x;
                 _hasJumpInput = _jump.IsPressed();

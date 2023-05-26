@@ -380,7 +380,6 @@
 "Assets/Scripts/Dimensions/Lever.cs"
 "Assets/Scripts/GameManager.cs"
 "Assets/Scripts/LevelManager.cs"
-"Assets/Scripts/LoadScene.cs"
 "Assets/Scripts/Menu/CameraFloat.cs"
 "Assets/Scripts/Menu/LevelSelection.cs"
 "Assets/Scripts/Menu/LevelSelector.cs"

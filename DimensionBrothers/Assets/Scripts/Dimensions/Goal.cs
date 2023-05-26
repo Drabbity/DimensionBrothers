@@ -13,7 +13,7 @@ namespace DimensionBrothers.Dimension
 
         private void Start()
         {
-            _levelManager = FindObjectOfType<LevelManager>();
+            _levelManager = LevelManager.Instance;
         }
 
         private void OnTriggerEnter2D(Collider2D collision)
