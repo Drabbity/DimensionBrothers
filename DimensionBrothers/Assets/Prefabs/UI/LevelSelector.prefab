@@ -148,6 +148,7 @@ GameObject:
   - component: {fileID: 8695517973884424102}
   - component: {fileID: 3682272077830349251}
   - component: {fileID: 5931960644406816679}
+  - component: {fileID: 505121590483783599}
   m_Layer: 5
   m_Name: LevelSelector
   m_TagString: Untagged
@@ -257,7 +258,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 8695517973884424102}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 505121590483783599}
+        m_TargetAssemblyTypeName: DimensionBrothers.Audio.AudioPlayer, Assembly-CSharp
+        m_MethodName: PlayAudio
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: UI_CLICK
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &5931960644406816679
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -272,3 +285,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _button: {fileID: 3682272077830349251}
   _text: {fileID: 2138601605315483509}
+--- !u!114 &505121590483783599
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7801248914625828635}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f77d9f4525d144448adb2cf3d9e40d62, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

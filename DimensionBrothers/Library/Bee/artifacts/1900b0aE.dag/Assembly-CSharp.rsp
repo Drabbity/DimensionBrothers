@@ -374,7 +374,8 @@
 -r:"Library/Bee/artifacts/1900b0aE.dag/UnityEditor.UI.ref.dll"
 -r:"Library/Bee/artifacts/1900b0aE.dag/UnityEngine.UI.ref.dll"
 "Assets/Input/PlayerInputActions.cs"
-"Assets/Scripts/Bootstrapper.cs"
+"Assets/Scripts/Audio/AudioManager.cs"
+"Assets/Scripts/Audio/AudioPlayer.cs"
 "Assets/Scripts/CameraScaleToLevel.cs"
 "Assets/Scripts/Dimensions/DimensionManager.cs"
 "Assets/Scripts/Dimensions/Goal.cs"
@@ -385,6 +386,9 @@
 "Assets/Scripts/Menu/LevelSelection.cs"
 "Assets/Scripts/Menu/LevelSelector.cs"
 "Assets/Scripts/Menu/MenuManager.cs"
+"Assets/Scripts/Other/Bootstrapper.cs"
+"Assets/Scripts/Other/SerializableStringDictionary.cs"
+"Assets/Scripts/Other/Singleton.cs"
 "Assets/Scripts/Player/PlayerController.cs"
 -langversion:9.0
 

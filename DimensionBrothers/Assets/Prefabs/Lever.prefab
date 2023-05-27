@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 4100391869347652571}
   - component: {fileID: 4100391869347652573}
   - component: {fileID: 4100391869347652568}
+  - component: {fileID: 391020190992301827}
   m_Layer: 0
   m_Name: Lever
   m_TagString: Untagged
@@ -126,9 +127,45 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   <OnSwitchOn>k__BackingField:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 391020190992301827}
+        m_TargetAssemblyTypeName: DimensionBrothers.Audio.AudioPlayer, Assembly-CSharp
+        m_MethodName: PlayAudio
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: SWITCH
+          m_BoolArgument: 0
+        m_CallState: 2
   <OnSwitchOff>k__BackingField:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 391020190992301827}
+        m_TargetAssemblyTypeName: DimensionBrothers.Audio.AudioPlayer, Assembly-CSharp
+        m_MethodName: PlayAudio
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: SWITCH
+          m_BoolArgument: 0
+        m_CallState: 2
   _leverSpriteRenderer: {fileID: 4100391869347652571}
   _playerTagName: Player
+--- !u!114 &391020190992301827
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4100391869347652569}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f77d9f4525d144448adb2cf3d9e40d62, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

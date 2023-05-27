@@ -1,34 +1,11 @@
+using DimensionBrothers.Audio;
+using DimensionBrothers.Other;
 using UnityEngine;
 
 namespace DimensionBrothers
 {
-    public class LevelManager : MonoBehaviour
+    public class LevelManager : Singleton<LevelManager>
     {
-        #region Singleton
-        private static LevelManager _instance;
-        public static LevelManager Instance { get { return _instance; } }
-
-        protected virtual void Awake()
-        {
-            if (_instance != null)
-            {
-                Debug.LogErrorFormat("[Singleton] Trying to instantiate a second instance of singleton class {0} from {1}", GetType().Name, gameObject.name);
-                Destroy(gameObject);
-            }
-            else
-            {
-                _instance = this;
-            }
-        }
-
-        protected virtual void OnDestroy()
-        {
-            if (_instance == this)
-            {
-                _instance = null;
-            }
-        }
-        #endregion
         [SerializeField] private GameObject _victoryScreen;
         [SerializeField] private GameObject _pauseScreen;
         [SerializeField] private GameObject _nextLevelButton;
@@ -37,10 +14,12 @@ namespace DimensionBrothers
         public bool IsGamePaused { get; private set; } = false;
 
         private GameManager _gameManager;
+        private AudioManager _audioManager;
 
         private void Start()
         {
             _gameManager = GameManager.Instance;
+            _audioManager = AudioManager.Instance;
 
             ValidateNextLevelButton();
             _victoryScreen.SetActive(false);
@@ -60,6 +39,7 @@ namespace DimensionBrothers
             _pauseButton.SetActive(false);
             _victoryScreen.SetActive(true);
             IsGamePaused = true;
+            _audioManager.PlaySound("VICTORY");
         }
 
         public void TogglePauseScreen()

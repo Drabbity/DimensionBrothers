@@ -1,3 +1,4 @@
+using DimensionBrothers.Audio;
 using DimensionBrothers.Player;
 using System;
 using UnityEngine;
@@ -13,8 +14,11 @@ namespace DimensionBrothers.Dimension
 
         private int? _activeDimensionIndex = null;
 
+        private AudioManager _audioManager;
+
         private void Start()
         {
+            _audioManager = AudioManager.Instance;
             PopulateObjectArray();
             ChangeDimension(_startingDimensionIndex);
         }
@@ -39,6 +43,7 @@ namespace DimensionBrothers.Dimension
             }
             else
             {
+                _audioManager.PlaySound("FLIP");
                 ActivateDimension((int)_activeDimensionIndex, false);
                 ActivateDimension(index, true);
                 _activeDimensionIndex = index;

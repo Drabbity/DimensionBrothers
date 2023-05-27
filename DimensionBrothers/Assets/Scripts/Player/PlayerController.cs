@@ -1,3 +1,4 @@
+using DimensionBrothers.Audio;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -21,6 +22,7 @@ namespace DimensionBrothers.Player
         [SerializeField] private int _inactiveSpriteOrder = 15;
         
         [SerializeField] private bool _isActive;
+
         public bool IsActive 
         { 
             get
@@ -64,6 +66,8 @@ namespace DimensionBrothers.Player
         private bool _isJumping = false;
         private bool _hasJumped = true;
 
+        private AudioManager _audioManager;
+
         private void Awake()
         {
             _rigidBody = GetComponent<Rigidbody2D>();
@@ -73,6 +77,7 @@ namespace DimensionBrothers.Player
 
         private void Start()
         {
+            _audioManager = AudioManager.Instance;
             _levelManager = LevelManager.Instance;
             Physics2D.queriesHitTriggers = false;
         }
@@ -135,6 +140,8 @@ namespace DimensionBrothers.Player
         private void CalculateMove()
         {
             _velocity = new Vector2(_moveInput * _moveSpeed, _rigidBody.velocity.y);
+
+            
         }
 
         private void CalculateGravity()
@@ -156,6 +163,7 @@ namespace DimensionBrothers.Player
         {
             if ((_isGrounded || _coyoteJumpTimer < _coyoteJumpTimeGap) && _hasJumpInput && !_hasJumped)
             {
+                _audioManager.PlaySound("JUMP");
                 _hasJumped = true;
                 _isJumping = true;
                 _jumpTimer = 0f;

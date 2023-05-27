@@ -1,40 +1,13 @@
 using DG.Tweening;
+using DimensionBrothers.Other;
 using System;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
 namespace DimensionBrothers
 {
-    public class GameManager : MonoBehaviour
+    public class GameManager : Singleton<GameManager>
     {
-        #region Singleton Stuff
-        private static GameManager _instance;
-        public static GameManager Instance { get { return _instance; } }
-
-        protected virtual void Awake()
-        {
-            if (_instance != null)
-            {
-                Debug.LogErrorFormat("[Singleton] Trying to instantiate a second instance of singleton class {0} from {1}", GetType().Name, gameObject.name);
-                Destroy(gameObject);
-            }
-            else
-            {
-                _instance = this;
-            }
-
-            DontDestroyOnLoad(transform.gameObject);
-        }
-
-        protected virtual void OnDestroy()
-        {
-            if (_instance == this)
-            {
-                _instance = null;
-            }
-        }
-        #endregion
-
         [SerializeField] private GameObject _loader;
         [SerializeField] private Vector3 _transitionLoaderScale;
         [SerializeField] private float _transitionDuration;
