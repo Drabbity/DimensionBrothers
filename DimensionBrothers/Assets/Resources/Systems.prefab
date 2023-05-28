@@ -41,7 +41,7 @@ AudioSource:
   m_GameObject: {fileID: 1295582588}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
+  OutputAudioMixerGroup: {fileID: -2736128618609269834, guid: ff5dde9abc584234ca052ed9f1c1ea7b, type: 2}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 0
   m_Volume: 1
@@ -188,7 +188,10 @@ MonoBehaviour:
     - Key: VICTORY
       Value: {fileID: 8300000, guid: 8e2a6ce828e105545b8f55896ac163d1, type: 3}
     - Key: UI_CLICK
-      Value: {fileID: 8300000, guid: ca5c4904d7c7c124d8ad32c40e14da45, type: 3}
+      Value: {fileID: 8300000, guid: e2ea57b92122f6f4bb975bb2259fcd45, type: 3}
+  _audioMixer: {fileID: 24100000, guid: ff5dde9abc584234ca052ed9f1c1ea7b, type: 2}
+  _musicAudioName: MusicVolume
+  _sfxAudioName: SFXVolume
 --- !u!1 &1919409516
 GameObject:
   m_ObjectHideFlags: 0
@@ -230,7 +233,7 @@ AudioSource:
   m_GameObject: {fileID: 1919409516}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
+  OutputAudioMixerGroup: {fileID: 8851886849567580230, guid: ff5dde9abc584234ca052ed9f1c1ea7b, type: 2}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 0
   m_Volume: 1

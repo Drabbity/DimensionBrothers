@@ -376,6 +376,7 @@
 "Assets/Input/PlayerInputActions.cs"
 "Assets/Scripts/Audio/AudioManager.cs"
 "Assets/Scripts/Audio/AudioPlayer.cs"
+"Assets/Scripts/Audio/AudioSettings.cs"
 "Assets/Scripts/CameraScaleToLevel.cs"
 "Assets/Scripts/Dimensions/DimensionManager.cs"
 "Assets/Scripts/Dimensions/Goal.cs"

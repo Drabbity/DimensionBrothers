@@ -8,7 +8,7 @@ namespace DimensionBrothers.Menu
 
         private GameObject _currentMenu = null;
 
-        public void Start()
+        private void Start()
         {
             SwitchMenu(0);
         }
