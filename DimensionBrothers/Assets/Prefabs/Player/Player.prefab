@@ -348,12 +348,11 @@ MonoBehaviour:
   _jumpHoldTime: 0.3
   _gravity: 9.8
   _maxGravityFallSpeed: 15
-  _coyoteJumpTimeGap: 0.3
+  _coyoteJumpTimeGap: 0.15
   _renderer: {fileID: 4253297329431871019}
   _marker: {fileID: 6122049602981880785}
   _activeSpriteOrder: 5
   _inactiveSpriteOrder: 15
-  _walkAudioSource: {fileID: 920473379571987271}
   _isActive: 0
 --- !u!1 &4253297329431871022
 GameObject:

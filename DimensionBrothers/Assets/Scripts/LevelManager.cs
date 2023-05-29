@@ -40,6 +40,7 @@ namespace DimensionBrothers
             _victoryScreen.SetActive(true);
             IsGamePaused = true;
             _audioManager.PlaySound("VICTORY");
+            _gameManager.UnlockLevel(_gameManager.GetCurrentLevel() + 1);
         }
 
         public void TogglePauseScreen()

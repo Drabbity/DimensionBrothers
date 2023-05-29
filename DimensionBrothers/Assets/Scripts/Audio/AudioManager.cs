@@ -51,9 +51,19 @@ namespace DimensionBrothers.Audio
 
         private void LoadVolumeSettings()
         {
-            var musicVolume = PlayerPrefs.GetFloat(_MUSIC_VOLUME_KEY);
-            var sfxVolume = PlayerPrefs.GetFloat(_SFX_VOLUME_KEY);
-            
+            float musicVolume;
+            float sfxVolume;
+
+            if (PlayerPrefs.HasKey(_MUSIC_VOLUME_KEY))
+                musicVolume = PlayerPrefs.GetFloat(_MUSIC_VOLUME_KEY);
+            else
+                musicVolume = 1;
+
+            if (PlayerPrefs.HasKey(_SFX_VOLUME_KEY))
+                sfxVolume = PlayerPrefs.GetFloat(_SFX_VOLUME_KEY);
+            else
+                sfxVolume = 1;
+
             SetMusicVolume(musicVolume);
             SetSFXVolume(sfxVolume);
         }

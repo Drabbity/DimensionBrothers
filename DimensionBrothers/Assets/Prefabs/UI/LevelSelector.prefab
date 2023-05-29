@@ -284,7 +284,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _button: {fileID: 3682272077830349251}
+  _renderer: {fileID: 8695517973884424102}
   _text: {fileID: 2138601605315483509}
+  _interactableColor: {r: 1, g: 1, b: 1, a: 1}
+  _notInteractableColor: {r: 0.696, g: 0.696, b: 0.696, a: 1}
 --- !u!114 &505121590483783599
 MonoBehaviour:
   m_ObjectHideFlags: 0

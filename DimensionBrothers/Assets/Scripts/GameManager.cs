@@ -8,6 +8,8 @@ namespace DimensionBrothers
 {
     public class GameManager : Singleton<GameManager>
     {
+        private const string _UNLOCKED_LEVEL_KEY = "UNLOCKED_LEVELS";
+
         [SerializeField] private GameObject _loader;
         [SerializeField] private Vector3 _transitionLoaderScale;
         [SerializeField] private float _transitionDuration;
@@ -15,11 +17,18 @@ namespace DimensionBrothers
         [SerializeField] private string MenuSceneName;
         [field: SerializeField] public string LevelSceneNamePrefix { get; private set; }
 
+        public int UnlockedLevels {get; private set;}
+
         private bool _isLoading = false;
 
         private void Start()
         {
             _loader.SetActive(false);
+
+            if (PlayerPrefs.HasKey(_UNLOCKED_LEVEL_KEY))
+                UnlockedLevels = PlayerPrefs.GetInt(_UNLOCKED_LEVEL_KEY);
+            else
+                UnlockedLevels = 1;
         }
 
         public void LoadScene(string levelName)
@@ -68,6 +77,14 @@ namespace DimensionBrothers
         public void LoadMenu()
         {
             LoadScene(MenuSceneName);
+        }
+
+        public void UnlockLevel(int level)
+        {
+            if (UnlockedLevels >= level)
+                return;
+            UnlockedLevels = level;
+            PlayerPrefs.SetInt(_UNLOCKED_LEVEL_KEY, level);
         }
 
         private bool IsSceneALevel(string levelName)

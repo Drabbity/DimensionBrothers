@@ -8,10 +8,12 @@ namespace DimensionBrothers.Menu
         [SerializeField] private Transform _content;
 
         private string _levelSceneNamePrefix;
+        private GameManager _gameManager;
 
         private void Start()
         {
-            _levelSceneNamePrefix = GameManager.Instance.LevelSceneNamePrefix;
+            _gameManager = GameManager.Instance;
+            _levelSceneNamePrefix = _gameManager.LevelSceneNamePrefix;
             LoadLevelSelectors();
         }
 
@@ -20,7 +22,7 @@ namespace DimensionBrothers.Menu
             string sceneName = _levelSceneNamePrefix + "1";
             for (int i = 1; Application.CanStreamedLevelBeLoaded(sceneName); i++, sceneName = _levelSceneNamePrefix + i.ToString())
             {
-                Instantiate(_levelSelectorPrefab, _content).Initialize(sceneName, i);
+                Instantiate(_levelSelectorPrefab, _content).Initialize(sceneName, i, i <= _gameManager.UnlockedLevels);
             }
         }
     }
